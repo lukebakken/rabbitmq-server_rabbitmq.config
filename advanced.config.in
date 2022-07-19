@@ -1,0 +1,5 @@
+[
+    {ssl, [
+        {versions, ['tlsv1.2','tlsv1.3']}
+    ]}
+].
