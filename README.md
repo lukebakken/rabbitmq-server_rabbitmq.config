@@ -1,9 +1,14 @@
+## Versions
+
+* RabbitMQ 3.10.6
+* Erlang 25.0.3
+
 ```
 $ openssl version
 OpenSSL 1.1.1f  31 Mar 2020
 ```
 
-Connection attempt output:
+## Connection attempt output:
 
 ```
 $ make openssl-connect
