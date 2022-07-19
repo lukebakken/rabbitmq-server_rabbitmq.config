@@ -1,5 +1,5 @@
+*.dump
 rabbitmq.conf
 rabbitmq.config
-advanced.config
 rabbitmq-server*
 rabbitmq_server*/
