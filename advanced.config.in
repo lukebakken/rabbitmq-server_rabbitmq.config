@@ -1,18 +1,18 @@
 [
- {kernel, [ ]},
+ {kernel, []},
  {rabbitmq_management, [
                         {listener, [
                                     {port,     15671},
                                     {ssl,      true},
                                     {ssl_opts, [{cacertfile, "@@PWD@@/certs/ca_certificate.pem"},
-                                                {certfile,   "@@PWD@@/certs/server_certificate.pem"},
-                                                {keyfile,    "@@PWD@@/certs/server_key.pem"},
+                                                {certfile,   "@@PWD@@/certs/server_localhost_certificate.pem"},
+                                                {keyfile,    "@@PWD@@/certs/server_localhost_key.pem"},
                                                 {verify, verify_none},
                                                 {fail_if_no_peer_cert, false}]},
-                                    {versions, ['tlsv1.2']}
+                                    {versions, ['tlsv1.2','tlsv1.3']}
                                    ]}
                        ]},
- {ssl, [{versions, ['tlsv1.2']}]},
+ {ssl, [{versions, ['tlsv1.2','tlsv1.3']}]},
  {secure_renegotiate, true},
  {rabbit, [
            {auth_backends, [rabbit_auth_backend_internal]},
@@ -32,11 +32,11 @@
            {heartbeat, 60},
            {ssl_listeners, [5671]},
            {ssl_options, [{cacertfile, "@@PWD@@/certs/ca_certificate.pem"},
-                          {certfile,   "@@PWD@@/certs/server_certificate.pem"},
-                          {keyfile,    "@@PWD@@/certs/server_key.pem"},
+                          {certfile,   "@@PWD@@/certs/server_localhost_certificate.pem"},
+                          {keyfile,    "@@PWD@@/certs/server_localhost_key.pem"},
                           {verify,     verify_none},
                           {fail_if_no_peer_cert, false}]},
-           {versions, ['tlsv1.2']},
+           {versions, ['tlsv1.2','tlsv1.3']},
            {ciphers,  [
                        "ECDHE-ECDSA-AES256-GCM-SHA384",
                        "ECDHE-RSA-AES256-GCM-SHA384",
